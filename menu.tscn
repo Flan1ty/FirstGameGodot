@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7bvk13snm50d"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_m3sqh"]
+[ext_resource type="PackedScene" uid="uid://dprft3onjet7r" path="res://BackGround.tscn" id="2_3f20n"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_m3sqh")
+
+[node name="Play" type="Button" parent="."]
+offset_left = 344.0
+offset_top = 174.0
+offset_right = 742.0
+offset_bottom = 279.0
+theme_override_font_sizes/font_size = 50
+text = "Play"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 344.0
+offset_top = 367.0
+offset_right = 742.0
+offset_bottom = 472.0
+theme_override_font_sizes/font_size = 50
+text = "Quit"
+
+[node name="BackGround" parent="." instance=ExtResource("2_3f20n")]
+
+[connection signal="pressed" from="Play" to="." method="PlayGame"]
+[connection signal="pressed" from="Quit" to="." method="QuitGame"]
